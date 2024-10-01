@@ -58,7 +58,7 @@
           <configuration>
             <archive>
               <manifest>
-                <mainClass>com\emailsend</mainClass> <!-- Replace with your actual main class -->
+                <mainClass>com\emailsend\App.java</mainClass> <!-- Replace with your actual main class -->
               </manifest>
             </archive>
           </configuration>
