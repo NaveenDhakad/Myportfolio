@@ -8,16 +8,7 @@ import java.util.Random;
 
 public class App {
     public static void main(String[] args) {
-        Random rn = new Random();
-        int no = rn.nextInt(9000) + 999;
 
-        System.out.println("Sending message through mail ");
-        String message = "Hello Ananya this is your otp from Naveens side would you like " + no;
-        String subject = "from portfolio ";
-
-        String To = "mohitrathore8269@gmail.com";
-        String from = "Naveendhakad489@gmail.com";
-        sendMessage(message, subject, To, from);
     }
 
     public static void sendMessage(String message, String subject, String to, String from) {
