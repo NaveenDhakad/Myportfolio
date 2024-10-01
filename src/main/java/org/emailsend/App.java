@@ -1,15 +1,19 @@
 package org.emailsend ;
 
+
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
+
+
 import java.util.Properties;
-import java.util.Random;
 
 public class App {
     public static void main(String[] args) {
 
-    }
+
+
+           }
 
     public static void sendMessage(String message, String subject, String to, String from) {
         String host = "smtp.gmail.com";
@@ -35,7 +39,7 @@ public class App {
             Transport.send(m);
             System.out.println("send successfully");
         } catch (MessagingException e) {
-            e.printStackTrace();
+         e.printStackTrace();
         }
     }
 }
