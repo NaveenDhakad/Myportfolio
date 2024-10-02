@@ -4,6 +4,6 @@ RUN mvn clean package -DskipTests
 FROM openjdk:21-jdk-slim
 COPY --from=build /target/portfolio-1.0-SNAPSHOT.jar portfolio.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar" ,"portfolio.jar"]
+ENTRYPOINT ["html","-jar" ,"portfolio.jar"]
 
 
