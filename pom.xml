@@ -49,21 +49,21 @@
           <path>/</path>
         </configuration>
       </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.2.4</version>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>shade</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
 
 
-
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.2.0</version>
-          <configuration>
-            <archive>
-              <manifest>
-                <mainClass>org.emailsend.App</mainClass> <!-- Replace with your actual main class -->
-              </manifest>
-            </archive>
-          </configuration>
-        </plugin>
       </plugins>
 
   </build>
