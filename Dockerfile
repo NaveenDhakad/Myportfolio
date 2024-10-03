@@ -1,9 +1,7 @@
-FROM jelastic/maven:3.9.5-openjdk-21 AS build
-COPY . .
-RUN mvn clean package -DskipTests
-FROM openjdk:21-jdk-slim
-COPY --from=build /target/portfolio-1.0-SNAPSHOT.war portfolio.war
+FROM tomcat:10.1-jdk17
+WORKDIR /portfolio/src/main/webapp/
+RUN rm -rf ROOT
+COPY target/portfolio-1.0-SNAPSHOT.war /portfolio/src/main/webapp/ROOT.war
 EXPOSE 8080
-ENTRYPOINT ["java","-jar" ,"portfolio.war"]
-
+CMD ["catalina.sh", "run"]
 
