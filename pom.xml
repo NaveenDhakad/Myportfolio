@@ -47,7 +47,7 @@
           <configuration>
             <archive>
               <manifest>
-                <mainClass>org.emailsend.App</mainClass> <!-- Fully qualified name of your App class -->
+                <mainClass>index</mainClass> <!-- Fully qualified name of your App class -->
               </manifest>
             </archive>
           </configuration>
