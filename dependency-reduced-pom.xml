@@ -3,7 +3,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.emailsend</groupId>
   <artifactId>portfolio</artifactId>
-  <packaging>war</packaging>
   <name>portfolio</name>
   <version>1.0-SNAPSHOT</version>
   <url>http://maven.apache.org</url>
