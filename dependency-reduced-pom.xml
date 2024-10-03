@@ -15,7 +15,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>org.emailsend.App</mainClass>
+              <mainClass>index</mainClass>
             </manifest>
           </archive>
         </configuration>
