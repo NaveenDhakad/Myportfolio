@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.emailsend</groupId>
   <artifactId>portfolio</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>portfolio</name>
   <url>http://maven.apache.org</url>
@@ -28,8 +28,8 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
-    <!-- https://mvnrepository.com/artifact/com.sun.mail/jakarta.mail -->
+
+    <!-- Jakarta Mail for sending emails -->
     <dependency>
       <groupId>com.sun.mail</groupId>
       <artifactId>jakarta.mail</artifactId>
@@ -37,6 +37,7 @@
     </dependency>
 
   </dependencies>
+
   <build>
     <plugins>
       <!-- Tomcat Plugin for running the project -->
@@ -49,35 +50,22 @@
           <path>/</path>
         </configuration>
       </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <version>3.2.4</version>
-            <executions>
-              <execution>
-                <phase>package</phase>
-                <goals>
-                  <goal>shade</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
 
-
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.2.0</version>
-          <configuration>
-            <archive>
-              <manifest>
-                <mainClass>org.emailsend.App</mainClass> <!-- Replace with your actual main class -->
-              </manifest>
-            </archive>
-          </configuration>
-        </plugin>
-      </plugins>
-
+      <!-- Shade plugin for packaging dependencies -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.4</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 
 </project>
